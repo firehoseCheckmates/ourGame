@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+gem 'foundation-rails'
 
-#adding user login capability
+# adding user login capability
 gem 'devise', '>= 3.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
