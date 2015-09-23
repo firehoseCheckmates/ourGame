@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem "figaro"
+
 gem 'foundation-rails'
 
 # adding user login capability
