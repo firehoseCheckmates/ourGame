@@ -32,7 +32,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Ruby code style checker
-gem 'rubocop'
+gem 'rubocop', require: false
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
