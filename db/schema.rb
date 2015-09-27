@@ -42,10 +42,14 @@ ActiveRecord::Schema.define(version: 20150924183144) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
     t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
