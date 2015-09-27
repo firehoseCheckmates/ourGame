@@ -1,9 +1,4 @@
 source 'https://rubygems.org'
-
-gem 'omniauth-facebook'
-
-gem "figaro"
-
 gem 'foundation-rails'
 
 # adding user login capability
