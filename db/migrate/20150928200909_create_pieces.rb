@@ -6,7 +6,7 @@ class CreatePieces < ActiveRecord::Migration
       t.integer :col_position
       t.boolean :alive
       t.string  :color
-      t.string  :piece_type
+      t.string  :type
 
       t.timestamps
     end

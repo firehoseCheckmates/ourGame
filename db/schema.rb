@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150928200909) do
     t.integer  "col_position"
     t.boolean  "alive"
     t.string   "color"
-    t.string   "piece_type"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
