@@ -45,4 +45,10 @@ class Game < ActiveRecord::Base
 			pieces.create(:type => "King", :color => "White", :x_position => 4, :y_position => 0)
 			pieces.create(:type => "King", :color => "Black", :x_position => 4, :y_position => 7)
 	end
+
+
+
+
+
+
 end
