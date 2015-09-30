@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'simple_form'
+
 gem 'omniauth-facebook'
 
 gem "figaro"
