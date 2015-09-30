@@ -2,11 +2,13 @@ class King < Piece
   # def king_moves_like_this
     # put code here
   # end
-  def Piece
+  def puts_piece_type
     puts "This is a King"
   end
 
-  def is_valid
+  def valid_move?
+    # put code for this piece should move here
+
   end
 
 end

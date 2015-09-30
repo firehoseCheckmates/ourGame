@@ -6,6 +6,8 @@ class Rook < Piece
     puts "This is a Rook"
   end
 
-  def is_valid
+  def valid_move?
+    # put code for this piece should move here
+
   end
 end

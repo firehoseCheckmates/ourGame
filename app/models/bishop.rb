@@ -3,10 +3,12 @@ class Bishop < Piece
       # put code here
   # end
 
-  def Piece
+  def puts_piece_type
     puts "This is a Bishop"
   end
 
-  def is_valid
+  def valid_move?
+    # put code for this piece should move here
+
   end
 end
