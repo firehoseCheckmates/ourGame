@@ -8,7 +8,7 @@ class Bishop < Piece
   end
 
   def valid_move?
-    # put code for this piece should move here
+    # put code for how this piece should move here
 
   end
 end
