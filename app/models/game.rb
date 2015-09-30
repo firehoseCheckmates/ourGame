@@ -47,7 +47,9 @@ class Game < ActiveRecord::Base
 	end
 
 
-
+	def update
+		# black_player_id = current_user_id
+	end
 
 
 
