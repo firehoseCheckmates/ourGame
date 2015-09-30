@@ -10,11 +10,12 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
   </head>
 
   <body>
    <!-- This is the Nav bar HTML-->
-    <div class="sticky">
+    <div class="page-wrap">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -52,10 +53,11 @@
     <!-- This ends Nav Bar HTML-->
 
     <!-- This is the Footer HTML -->
-    <div id="footer">
-      <p>asdfasdfasdf </p>
 
-    </div>
+    <footer class="site-footer">
+       I'm the Sticky Footer.
+    </footer>
+
 
     <%= yield %>
 
