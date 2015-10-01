@@ -14,10 +14,14 @@ table {
 }
 
 .wht {
-	background-image: url("black.gif");
-	background-color: #fff;
+	background-image: url("white.png");
+	background-color: #D0E8FF;
 }
+
 .blk {
-	background-image: url("white.gif");
-	background-color: #cccccc;
+	background-image: url("black.png");
+	background-color: #35629C;
+	a{
+		color: #fff
+	}
 }
