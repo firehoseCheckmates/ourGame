@@ -1,3 +1,4 @@
+# This lists the methods that apply to all chess pieces.
 class Piece < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
@@ -11,7 +12,7 @@ def obstructed_move?(x, y)
     for i in (current_row+1...x) do
       if self.game.piece_exists?(i, y)
         return true
-      end	
+      end
     end
   end
 
@@ -20,7 +21,7 @@ def obstructed_move?(x, y)
     for i in (x+1...current_row) do
       if self.game.piece_exists?(i, y)
         return true
-      end	
+      end
     end
   end
 
@@ -29,7 +30,7 @@ def obstructed_move?(x, y)
     for i in (current_col+1...y) do
       if self.game.piece_exists?(x, i)
         return true
-      end	
+      end
     end
   end
 
@@ -38,9 +39,15 @@ def obstructed_move?(x, y)
     for i in (y+1...current_col) do
       if self.game.piece_exists?(x, i)
         return true
-      end	
+      end
     end
   end
 
   return false
+
+def puts_piece
+  puts "I am a piece"
+end
+
+
 end
