@@ -2,6 +2,13 @@ class Game < ActiveRecord::Base
 	belongs_to :user
 	has_many :pieces
 
+
+
+	def new
+		@game=Game.new
+
+	end
+
 	after_create :populate_board!
 
 	def populate_board!

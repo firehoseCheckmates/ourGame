@@ -1,5 +1,9 @@
 class GamesController < ApplicationController
 
+  def index
+    @game= Game.all
+  end
+
   def new
   end
 
@@ -8,4 +12,5 @@ class GamesController < ApplicationController
 
   def show
   end
+
 end
