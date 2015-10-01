@@ -1,1 +1,5 @@
-<h1>Game's new page</h1>
+<h1>Enter Your Game Name</h1>
+<%= simple_form_for @game do |f| %>
+	<%= f.input :name %>
+	<%= f.submit 'Create' %>
+<% end %>
