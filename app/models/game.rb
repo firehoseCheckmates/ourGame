@@ -6,7 +6,7 @@ class Game < ActiveRecord::Base
 
 
 	def index
-		@games=Game.all
+		@list_all_games=Game.all
 	end
 
 	def new
