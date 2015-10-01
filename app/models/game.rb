@@ -51,6 +51,9 @@ class Game < ActiveRecord::Base
 		# black_player_id = current_user_id
 	end
 
+	def show
+	end
+
 
 
 end
