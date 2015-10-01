@@ -11,15 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923200320) do
+ActiveRecord::Schema.define(version: 20150929180325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: true do |t|
-    t.integer "white_player_id"
-    t.integer "black_player_id"
+    t.integer  "white_player_id"
+    t.integer  "black_player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  create_table "pieces", force: true do |t|
+    t.integer  "row_position"
+    t.integer  "col_position"
+    t.boolean  "alive"
+    t.string   "color"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "game_id"
+  end
+
+  add_index "pieces", ["game_id"], name: "index_pieces_on_game_id", using: :btree
+  add_index "pieces", ["user_id"], name: "index_pieces_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,9 +51,14 @@ ActiveRecord::Schema.define(version: 20150923200320) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
