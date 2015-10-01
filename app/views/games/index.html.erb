@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>checkMates</title>
+  </head>
+
+  <body>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="row">
+      <div class="small-4 large-centered columns"><li><%= link_to 'Start a new Game', new_game_path %></li>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-4 small-centered columns">
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-4 large-centered columns"><h3>Join one of these games</h3></div>
+        <p> (list of all games. Have to add button to take user to that game still)
+        <h1><%= @games.inspect %></h1>
+    </div>
+
+
+
+  </body>
+
+</html>
