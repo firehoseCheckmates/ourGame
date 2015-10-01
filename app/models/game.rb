@@ -1,6 +1,7 @@
 class Game < ActiveRecord::Base
 	belongs_to :user
 	has_many :pieces
+	has_many :joingames
 
 	after_create :populate_board!
 
@@ -44,4 +45,15 @@ class Game < ActiveRecord::Base
 			pieces.create(:type => "King", :color => "White", :x_position => 4, :y_position => 0)
 			pieces.create(:type => "King", :color => "Black", :x_position => 4, :y_position => 7)
 	end
+
+
+	def update
+		# black_player_id = current_user_id
+	end
+
+	def show
+	end
+
+
+
 end

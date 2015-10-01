@@ -1,0 +1,2 @@
+module JoingamesHelper
+end
