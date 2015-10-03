@@ -5,16 +5,6 @@ class Game < ActiveRecord::Base
 
 	after_create :populate_board!
 
-
-	def index
-		@list_all_games=Game.all
-	end
-
-	def new
-		@game=Game.new
-	end
-
-
 	def populate_board!
 		# populate white front row with Pawns
 		(0..7).each do |n|
