@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :games
+  belongs_to :game
   has_many :pieces
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

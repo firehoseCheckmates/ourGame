@@ -7,7 +7,17 @@ class King < Piece
   end
 
   def valid_move?
-    # put code for how this piece should move here
+    # king can move from starting point to the right one square
+
+
+
+    # king can move from starting point to the left one square
+
+
+    # king can move from starting point up one column
+
+
+    #king can move from starting point down one column
 
   end
 
