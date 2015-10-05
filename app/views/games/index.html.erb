@@ -26,15 +26,21 @@
       <div class="small-4 large-centered columns">
         <h3>Join one of these games</h3>
       </div>
-        <p> (list of all games. Have to add button to take user to that game still)
-        <ul>
-          <% @games.each do |game| %>
-            <li>
-              <%= game.name %>
-            </li>
-          <% end %>
-        </ul>
 
+
+        <div class="row">
+          <div class="small-4 small-centered columns">
+            <ul>
+              <% @games.each do |game| %>
+                <li>
+                  <%= game.name %>
+                  <a href="#" class="button">Join Game</a>
+                </li>
+              <% end %>
+            </ul>
+
+          </div>
+        </div>
     </div>
 
 
