@@ -27,7 +27,14 @@
         <h3>Join one of these games</h3>
       </div>
         <p> (list of all games. Have to add button to take user to that game still)
-        <h1><%= @games.inspect %></h1>
+        <ul>
+          <% @games.each do |game| %>
+            <li>
+              <%= game.name %>
+            </li>
+          <% end %>
+        </ul>
+
     </div>
 
 
