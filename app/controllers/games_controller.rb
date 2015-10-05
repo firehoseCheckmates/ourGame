@@ -1,5 +1,9 @@
 class GamesController < ApplicationController
 
+  def index
+    @games = Game.all
+  end
+
   def new
   	@game = Game.new
   end
@@ -11,7 +15,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params :id)
+    @game = Game.find(params[:id])
     @pieces = @game.pieces
     # we need to know who the white player and black player is @user db
   end
