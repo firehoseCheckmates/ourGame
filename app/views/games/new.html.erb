@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>checkMates</title>
-  </head>
+<div class="row">
+  <div class="small-4 large-centered columns">
+    <h2>Start a new game</h2>
+  </div>
+</div>
 
-  <body>
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <div class="row">
-      <div class="small-4 large-centered columns"><h2>Start a new game</h2></div>
-    </div>
-
-    <div class="row">
-      <div class="small-4 small-centered columns">
-        <h3>Enter Your Game Name</h3>
-        <%= simple_form_for @game do |f| %>
-          <%= f.input :name %>
-          <%= f.submit 'Create' %>
-        <% end %>
-      </div>
-    </div>
-
-
-
-
-
-  </body>
-
-</html>
-
-
-
-
+<div class="row">
+  <div class="small-4 small-centered columns">
+    <h3>Enter Your Game Name</h3>
+    <%= simple_form_for @game do |f| %>
+      <%= f.input :name %>
+      <%= f.submit 'Create' %>
+    <% end %>
+  </div>
+</div>
