@@ -34,7 +34,8 @@
               <% @games.each do |game| %>
                 <li>
                   <%= game.name %>
-                  <a href="#" class="button">Join Game</a>
+                  <%= link_to 'Join Game', game_path(game), :class => 'custom-button-class' %>
+
                 </li>
               <% end %>
             </ul>
