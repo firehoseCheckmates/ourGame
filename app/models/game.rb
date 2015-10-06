@@ -1,6 +1,7 @@
 class Game < ActiveRecord::Base
 
-	has_many :user
+	belongs_to :white_player, class_name: 'User'
+    belongs_to :black_player, class_name: 'User'
 	has_many :pieces
 
 	after_create :populate_board!
