@@ -45,6 +45,7 @@ def obstructed_move?(x, y)
 
   return false
 end
+
 def puts_piece
   puts "I am a piece"
 end
