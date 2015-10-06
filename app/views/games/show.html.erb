@@ -8,7 +8,7 @@
 							<td class="<%= color_block(row, col)%>">
 								<% @pieces.each do |piece| %>
 									<% if (piece.row_position == row) && (piece.col_position == col) %> 
-										<%= link_to "#{piece.type}" %>
+										<%= link_to "#{piece.type} #{piece.color}" %>
 									<% end%>
 								<% end %>
 							</td>
