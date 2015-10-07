@@ -20,6 +20,9 @@ class GamesController < ApplicationController
     # we need to know who the white player and black player is @user db
   end
 
+  def update
+  end
+
   private
 
   def game_params
