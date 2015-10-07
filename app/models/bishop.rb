@@ -6,6 +6,9 @@ class Bishop < Piece
   end
 
   def valid_move?
-    # put code for how this piece should move here
+    # bishop can only move diagonally
+    self.valid_diag_move?(x, y)
   end
+
+ 
 end
