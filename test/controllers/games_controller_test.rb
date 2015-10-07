@@ -15,6 +15,7 @@ class GamesControllerTest < ActionController::TestCase
     game = Game.last
     game.white_player_id == user.id
     game.black_player_id == sign_in_user.id
+    assert true
   end
 
 
