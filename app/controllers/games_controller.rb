@@ -10,6 +10,7 @@ class GamesController < ApplicationController
 
   def create
   	@game = Game.create(game_params)
+    @game.update_attributes(white_player_id: current_user.id)
   	redirect_to game_path(@game)
     # how do we set white_player_id to current user_id?
   end
