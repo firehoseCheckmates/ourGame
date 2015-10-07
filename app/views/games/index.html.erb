@@ -34,8 +34,7 @@
               <% @games.each do |game| %>
                 <li>
                   <%= game.name %>
-                  <%= link_to 'Join Game', game_path(game),  :method => 'PATCH' %>
-
+                  <%= link_to 'Join Game', game_path(game), :method => 'PATCH' %>
                 </li>
               <% end %>
             </ul>
