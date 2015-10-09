@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @games = Game.all
   end
@@ -10,7 +10,9 @@ class GamesController < ApplicationController
   end
 
   def create
-  	@game = Game.create(game_params)
+  	@game = Game.new(game_params)
+    @game.white_player = current_user
+    @game.save!
   	redirect_to game_path(@game)
   end
 
@@ -25,10 +27,12 @@ class GamesController < ApplicationController
   private
 
   def game_params
+
   	params.require(:game).permit(
       :name,
-      :white_player_id, 
+      :white_player_id,
       :black_player_id)
+
   end
 
 end
