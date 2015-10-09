@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @games = Game.all
@@ -12,12 +13,13 @@ class GamesController < ApplicationController
   	@game = Game.create(game_params)
     @game.update_attributes(white_player_id: current_user.id)
   	redirect_to game_path(@game)
-    # how do we set white_player_id to current user_id?
   end
 
   def show
     @game = Game.find(params[:id])
     @pieces = @game.pieces
+    @white_player = User.find_by(id: @game.white_player_id)
+    @black_player = User.find_by(id: @game.black_player_id)
     # we need to know who the white player and black player is @user db
   end
 
@@ -30,8 +32,12 @@ class GamesController < ApplicationController
   private
 
   def game_params
-  	params.require(:game).permit(:name)
-    # white_player_id = user_id
+
+  	params.require(:game).permit(
+      :name,
+      :white_player_id,
+      :black_player_id)
+
   end
 
 end
