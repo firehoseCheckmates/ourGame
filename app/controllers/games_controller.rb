@@ -10,9 +10,8 @@ class GamesController < ApplicationController
   end
 
   def create
-  	@game = Game.new(game_params)
-    @game.white_player = current_user
-    @game.save!
+  	@game = Game.create(game_params)
+    @game.update_attributes(white_player_id: current_user.id)
   	redirect_to game_path(@game)
   end
 
@@ -22,6 +21,12 @@ class GamesController < ApplicationController
     @white_player = User.find_by(id: @game.white_player_id)
     @black_player = User.find_by(id: @game.black_player_id)
     # we need to know who the white player and black player is @user db
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.update_attributes(black_player_id: current_user.id)
+    redirect_to game_path(@game)
   end
 
   private

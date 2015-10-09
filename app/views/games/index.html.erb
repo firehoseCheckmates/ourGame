@@ -7,12 +7,16 @@
   <div class="small-4 small-centered columns">
   </div>
 </div>
-
 <div class="row">
-  <div class="small-4 large-centered columns">
-    <h3>Join one of these games</h3>
+  <div class="small-4 small-centered columns">
+    <ul>
+      <% @games.each do |game| %>
+        <li>
+          <%= game.name %>
+          <%= link_to 'Join Game', game_path(game), :method => 'PATCH' %>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <p> (list of all games. Have to add button to take user to that game still)
-  </p>
-  <h1><%= @games.inspect %></h1>
 </div>
+
