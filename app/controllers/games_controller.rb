@@ -9,9 +9,11 @@ class GamesController < ApplicationController
   end
 
   def create
-  	@game = Game.create(game_params)
+  	@game = Game.new(game_params)
+    @game.white_player = current_user
+    @game.save!
   	redirect_to game_path(@game)
-    # how do we set white_player_id to current user_id?
+   
   end
 
   def show
@@ -24,7 +26,7 @@ class GamesController < ApplicationController
 
   def game_params
   	params.require(:game).permit(:name)
-    # white_player_id = user_id
+   
   end
 
 end
