@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
 
 	belongs_to :white_player, class_name: 'User'
-    belongs_to :black_player, class_name: 'User'
+  belongs_to :black_player, class_name: 'User'
 	has_many :pieces
 
 	after_create :populate_board!
@@ -23,7 +23,7 @@ class Game < ActiveRecord::Base
 		Rook.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 7)
 		Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 0)
 		Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 7)
-	
+
 		Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 1)
 		Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 6)
 		Knight.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 1)
