@@ -3,7 +3,11 @@ class Piece < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
 
-def obstructed_move?(x, y)
+# is_obstructed? determines if there are obstructions between two squares. An obstruction is “something between point A and point B”.
+# Raise an Error Message if Not diagnal, horizontal, or vertical. (Sample is Knight)
+# Return true if there is a piece found between current x/y to target x/y else return false
+# Raise an error is target is not vertical, horizontal, and diagonal.
+def is_obstructed?(x, y)
   current_row = self.row_position
   current_col = self.col_position
 
@@ -46,13 +50,20 @@ def obstructed_move?(x, y)
   return false
 end
 
-def puts_piece
-  puts "I am a piece"
-end
-
+#http://stackoverflow.com/questions/13186722/what-is-the-difference-between-using-exists-and-present-in-ruby
 def occupied?(x, y)
-  game.pieces.where(row_position: x, col_position: y).present?
+  Piece.where(:game_id => self.game.id, :row_position => x, :col_position => y).present?
 end
 
+# @return [true, false]
+# def present?
+#   !blank?
+# end
+
+# exists?(preview)
+# Returns true if the preview exists
+# def exists?(preview)
+#   all.any?{ |p| p.preview_name == preview }
+# end
 
 end
