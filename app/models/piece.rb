@@ -42,19 +42,10 @@ class Piece < ActiveRecord::Base
   end
 
   #http://stackoverflow.com/questions/13186722/what-is-the-difference-between-using-exists-and-present-in-ruby
+  #To do move this to game.rb and Do Piece.where(...)
   def occupied?(x, y)
-    Piece.where(:game_id => self.game.id, :row_position => x, :col_position => y).present?
+    game.pieces.where(:row_position => x, :col_position => y).present?
   end
 
-  # @return [true, false]
-  # def present?
-  #   !blank?
-  # end
-
-  # exists?(preview)
-  # Returns true if the preview exists
-  # def exists?(preview)
-  #   all.any?{ |p| p.preview_name == preview }
-  # end
 
 end
