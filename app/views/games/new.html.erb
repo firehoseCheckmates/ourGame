@@ -1,1 +1,15 @@
-<h1>Game's new page</h1>
+<div class="row">
+  <div class="small-4 large-centered columns">
+    <h2>Start a new game</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 small-centered columns">
+    <h3>Enter Your Game Name</h3>
+    <%= simple_form_for @game do |f| %>
+      <%= f.input :name %>
+      <%= f.submit 'Create' %>
+    <% end %>
+  </div>
+</div>

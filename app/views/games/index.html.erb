@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="small-4 large-centered columns"><li><%= link_to 'Start a new Game', new_game_path %></li>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 small-centered columns">
+  </div>
+</div>
+<div class="row">
+  <div class="small-4 small-centered columns">
+    <ul>
+      <% @games.each do |game| %>
+        <li>
+          <%= game.name %>
+          <%= link_to 'Join Game', game_path(game), :method => 'PATCH' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

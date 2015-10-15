@@ -1,3 +1,30 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.chessboard {
+	tr, td {
+		border: 2px solid gray;
+	}
+}
+
+.wht {
+	background-image: url("white.png");
+	background-color: #D0E8FF;
+}
+
+.blk {
+	background-image: url("black.png");
+	background-color: #35629C;
+	a{
+		color: #fff
+	}
+}
+
+.custom-button-class {
+ }
