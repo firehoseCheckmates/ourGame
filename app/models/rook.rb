@@ -1,13 +1,14 @@
 class Rook < Piece
-  # def rook_moves_like_this
-    # put code here
-  # end
   def Piece
     puts "This is a Rook"
   end
 
-  def valid_move?
-    # put code for how this piece should move here
-
+  def legal_move?(x, y)
+    # move is either horizontal or vertical
+    self.legal_horiz_move?(x, y) || self.legal_vert_move?(x, y)
   end
+
+  def piece_exists?(x, y)
+	  Piece.where(row_position: x, col_position: y).exists?
+	end
 end

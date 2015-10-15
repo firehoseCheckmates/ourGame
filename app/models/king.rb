@@ -21,4 +21,8 @@ class King < Piece
 
   end
 
+  def piece_exists?(x, y)
+    Piece.where(game_id: self.id, row_position: x, col_position: y).exists?
+  end
+
 end

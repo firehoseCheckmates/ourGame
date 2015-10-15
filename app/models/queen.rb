@@ -1,13 +1,16 @@
 class Queen < Piece
-  # def queen_moves_like_this
-    # put code here
-  # end
+ 
   def puts_piece_type
-    puts "This is a Pawn"
+    puts "This is a Queen"
   end
 
-  def valid_move?
-    # put code for how this piece should move here
+  def legal_move?(x, y)
+		#queen can move anywhere vacant
+		self.legal_horiz_move?(x, y) || self.legal_vert_move?(x, y) || self.legal_diag_move?(x, y)
+	end
 
-  end
+	def piece_exists?(x, y)
+	  Piece.where(row_position: x, col_position: y).exists?
+	end
+
 end
