@@ -23,7 +23,7 @@ class Game < ActiveRecord::Base
 		Rook.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 7)
 		Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 0)
 		Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 7)
-	
+
 		Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 1)
 		Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 6)
 		Knight.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 1)
@@ -38,6 +38,8 @@ class Game < ActiveRecord::Base
 		Queen.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 3)
 
 		King.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 4)
-		King.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 4)
+		King.create(:game_id => self.id, :color => "Black", :row_position => 4, :col_position => 0)
 	end
+
+
 end
