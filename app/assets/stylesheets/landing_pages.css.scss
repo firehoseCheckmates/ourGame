@@ -6,7 +6,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: 100% 90%;
+  background-size: 100% 95%;
+  background-position: 0% -15%;
 
 }
 
@@ -22,4 +23,14 @@ body {
 
 body {
   height: auto;
+}
+
+img.logo{
+  position:relative;
+  right: 200px;
+}
+p.logo{
+    position: relative;
+    top: -35px;
+    left: -133px;
 }
