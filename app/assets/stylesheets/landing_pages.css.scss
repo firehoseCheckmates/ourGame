@@ -6,7 +6,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: 100% 90%;
+
 }
 
 .centered{
@@ -17,4 +18,8 @@ body {
     right: 0;
 
     margin: auto;
+}
+
+body {
+  height: auto;
 }

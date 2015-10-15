@@ -15,7 +15,6 @@
 
   <body>
    <!-- This is the Nav bar HTML-->
-    <div class="page-wrap">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -40,23 +39,21 @@
           </ul> -->
         </section>
       </nav>
-    </div>
     <!-- This ends Nav Bar HTML-->
 
+
+      <%= yield %>
+
+
+
     <!-- This is the Footer HTML -->
-
-
-
-
-    <%= yield %>
-
-    <div id="footer">
+    <footer>
        <div class="row">
-        <div class="small-6 columns"><img src= "assets/firehoselogo.png" alt="some_text"></div>
-
-        <div class="small-6 columns">ABOUT</div>
+        <div class="small-1 columns"><img src= "assets/firehoselogo.png" alt="some_text"></div>
+        <div class="small-10 columns"></div>
+        <div class="small-1 columns">ABOUT</div>
       </div>
-    </div>
+    </footer>
 
   </body>
 </html>
