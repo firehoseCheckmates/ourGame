@@ -15,4 +15,14 @@ class GameTest < ActiveSupport::TestCase
     assert_equal 4, g.pieces.last.col_position
 
   end
+
+  test 'block is occupied with a piece' do
+    g = FactoryGirl.create(:game)
+    assert g.occupied?(0,0)
+  end
+
+  test 'block is not occupied with a piece' do
+    g = FactoryGirl.create(:game)
+    refute g.occupied?(3,3)
+  end
 end

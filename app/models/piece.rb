@@ -14,38 +14,30 @@ class Piece < ActiveRecord::Base
     # check if piece is blocking the path in positive vertical direction
     if current_col == y && x > current_row
       for i in (current_row + 1...x)
-        return self.occupied?(i, y)
+        return game.occupied?(i, y)
       end
     end
 
     # check if piece is blocking the path in negative vertical direction
     if current_col == y && x < current_row
       for i in (x + 1...current_row)
-        return self.occupied?(i, y)
+        return game.occupied?(i, y)
       end
     end
 
     # check if piece is blocking the path in positive horizontal direction
     if current_row == x && y > current_col
       for i in (current_col + 1...y)
-        return self.occupied?(x, i)
+        return game.occupied?(x, i)
       end
     end
 
     # check if piece is blocking the path in negative horizontal direction
     if current_row == x && y < current_col
       for i in (y + 1...current_col)
-        return self.occupied?(x, i)
+        return game.occupied?(x, i)
       end
     end
 
   end
-
-  #http://stackoverflow.com/questions/13186722/what-is-the-difference-between-using-exists-and-present-in-ruby
-  #To do move this to game.rb and Do Piece.where(...)
-  def occupied?(x, y)
-    game.pieces.where(:row_position => x, :col_position => y).present?
-  end
-
-
 end
