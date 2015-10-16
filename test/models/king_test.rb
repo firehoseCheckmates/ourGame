@@ -6,16 +6,16 @@ class KingTest < ActiveSupport::TestCase
     king = Piece.create(:type => 'King', :row_position => 4, :col_position => 3)
 
     # top left corner
-    assert_equal true, king.legal_move?(3, 2)
-
+    assert king.legal_move?(3, 2)
     # bottom left corner
-    assert_equal true, king.legal_move?(5, 2)
-
+    assert king.legal_move?(5, 2)
     # top right corner
-    assert_equal true, king.legal_move?(3, 4)
-
+    assert king.legal_move?(3, 4)
     # bottom right corner
-    assert_equal true, king.legal_move?(5, 4)
+    assert king.legal_move?(5, 4)
+    # vertical move
+    assert king.legal_move?(5, 3)
+
   end
 
   test "Not a legal move for king" do
@@ -23,21 +23,14 @@ class KingTest < ActiveSupport::TestCase
     king = Piece.create(:type => 'King', :row_position => 4, :col_position => 3)
 
     # forward
-    assert_equal false, king.legal_move?(7, 3)
-
+    refute king.legal_move?(7, 3)
     # back
-    assert_equal false, king.legal_move?(0, 3)
-
+    refute king.legal_move?(0, 3)
     # right
-    assert_equal false, king.legal_move?(4, 7)
-
+    refute king.legal_move?(4, 7)
     # left
-    assert_equal false, king.legal_move?(4, 0)
-
+    refute king.legal_move?(4, 0)
     # diagonal
-    assert_equal false, king.legal_move?(7, 0)
-
-    # out of boundaries
-    assert_equal false, king.legal_move?(8, 0)
+    refute king.legal_move?(7, 0)
   end
 end

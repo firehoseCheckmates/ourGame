@@ -9,13 +9,11 @@ class King < Piece
     current_row = self.row_position
     current_col = self.col_position
 
-    if col >= 0 && col <=7 && row >= 0 && row <= 7
+    row_dif = (current_row - row).abs
+    col_dif = (current_col - col).abs
 
-      return (current_col+1 == col || col == current_col-1) && (current_row+1 == row || row == current_row-1)
+    return col_dif <= 1 && row_dif <= 1
 
-    else
-      return false
-    end
   end
 
 end
