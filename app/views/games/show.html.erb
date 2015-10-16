@@ -1,20 +1,20 @@
 <div class="row">
-  <div class="medium-4 medium-offset-4 columns">
+  <div class="medium-10 medium-offset-1 columns">
   	<h1>Have Fun</h1>
-			<table class="chessboard" >
-				<% (0..7).each do |row| %>
-					<tr>
-					<% (0..7).each do |col|  %>
-							<td class="<%= color_block(row, col)%>">
-								<% @pieces.each do |piece| %>
-									<% if (piece.row_position == row) && (piece.col_position == col) %> 
-										<%= link_to "#{piece.type} #{piece.color}" %>
-									<% end%>
-								<% end %>
-							</td>
-					<% end %>
-					</tr>
-				<% end %>
-			</table>
+	<table class="chessboard" >
+		<% (0..7).each do |row| %>
+			<tr>
+			<% (0..7).each do |col|  %>
+					<td class="<%= color_block(row, col)%>">
+						<% @pieces.each do |piece| %>
+							<% if (piece.row_position == row) && (piece.col_position == col) %>
+								<%= link_to "", "", :class => "#{assign_piece(piece.type, piece.color)}" %>
+							<% end%>
+						<% end %>
+					</td>
+			<% end %>
+			</tr>
+		<% end %>
+	</table>
   </div>
 </div>
