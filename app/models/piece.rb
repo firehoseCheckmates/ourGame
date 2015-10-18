@@ -2,6 +2,10 @@
 class Piece < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
+  attr_accessor :row_diff, :col_diff
+
+  row_diff = (current_row - row_position).abs
+  col_diff = (current_col - col_position).abs
 
 def obstructed_move?(x, y)
   current_row = self.row_position
@@ -56,16 +60,20 @@ end
 
 
 def legal_horiz_move?(x, y)
-    x >= 0 and x <= 7 and y >= 0 and y <= 7 and (self.col_position - y) == 0
+  x >= 0 and x <= 7 and y >= 0 and y <= 7 and (self.col_position - col_position) == 0
 end
 
 def legal_vert_move?(x, y)
-  x >= 0 and x <= 7 and y >= 0 and y <= 7 and (self.row_position - x) == 0
-end  
+  x >= 0 and x <= 7 and y >= 0 and y <= 7 and (self.row_position - row_position) == 0
+end
 
 def legal_diag_move?(x, y)
   #x >= 0 and x <= 7 and y >= 0 and y <= 7
-  (self.row_position - x).abs == (self.col_position - y).abs
+  (self.row_position - row_position).abs == (self.col_position - col_position).abs
+end
+
+def piece_exists?(x, y)
+  Piece.where(game_id: self.id, row_position: x, col_position: y).exists?
 end
 
 

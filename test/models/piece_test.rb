@@ -1,13 +1,15 @@
 require 'test_helper'
 
 class PieceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
-  #test 'occupied' do
-  #	g = Game.create(row_position: x, col_position: y)
-  #	assert_equal (0, 0), g.piece.occupied?
-  	
-  #end 
+test 'block is occupied with a piece' do
+	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 0, :col_position => 4)
+	assert_equal blk_king.occupied(0,0)
+end
+
+test 'block is not occupied with a piece' do
+	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 0, :col_position => 4)
+	assert_equal false, blk_king.occupied?(3,3)
+end
+ 
 end

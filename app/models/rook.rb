@@ -8,7 +8,4 @@ class Rook < Piece
     self.legal_horiz_move?(x, y) || self.legal_vert_move?(x, y)
   end
 
-  def piece_exists?(x, y)
-	  Piece.where(row_position: x, col_position: y).exists?
-	end
 end

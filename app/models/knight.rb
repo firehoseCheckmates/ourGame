@@ -7,18 +7,19 @@ class Knight < Piece
   end
 
   def legal_move?(x, y)
-    # knight moves two squares in horiz. or vertical then one space in the other of the two directions, whichever one was NOT taken first, so if horiz then vert or if vert then horiz 
+    current_row = self.row_position
+    current_col = self.col_position
+
+    row_diff = (current_row - row_position).abs
+    col_diff = (current_col - col_position).abs
+    # knight moves two squares in horiz. or vertical then one space in the other of the two directions, whichever one was NOT taken first, so if horiz then vert or if vert then horiz
     if x >= 0 and x <= 7 and y >= 0 and y <= 7
-      if ((self.row_position - x).abs == 2 and (self.col_position - y).abs == 1) or ((self.col_position - y).abs == 2 and (self.row_position - x).abs == 1)
-        return true   
+      if (row_diff == 2 and col_diff == 1) or (col_diff == 2 and row_diff == 1)
+        return true
       end
     else
       return false
     end
-  end
-
-  def piece_exists?(x, y)
-    Piece.where(game_id: self.id, row_position: x, col_position: y).exists?
   end
 
 end
