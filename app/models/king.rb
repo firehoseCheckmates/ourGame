@@ -1,23 +1,18 @@
 class King < Piece
-  # def king_moves_like_this
-    # put code here
-  # end
+
   def puts_piece_type
     puts "This is a King"
   end
 
-  def valid_move?
-    # king can move from starting point to the right one square
+  # returns a true if the target location is a legal move to go to
+  def legal_move?(row,col)
+    current_row = self.row_position
+    current_col = self.col_position
 
+    row_dif = (current_row - row).abs
+    col_dif = (current_col - col).abs
 
-
-    # king can move from starting point to the left one square
-
-
-    # king can move from starting point up one column
-
-
-    #king can move from starting point down one column
+    return col_dif <= 1 && row_dif <= 1
 
   end
 
