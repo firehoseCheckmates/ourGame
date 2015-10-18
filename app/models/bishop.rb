@@ -5,10 +5,10 @@ class Bishop < Piece
     puts "This is a Bishop"
   end
 
-  def valid_move?
+  def legal_move?
     # bishop can only move diagonally
-    self.valid_diag_move?(x, y)
+    self.legal_diag_move?(x, y)
   end
 
- 
+
 end
