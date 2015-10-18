@@ -2,7 +2,7 @@
 class Piece < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
-  attr_accessor :row_diff, :col_diff
+  attr_accessor :row_diff, :col_diff, :current_row, :current_col
 
   row_diff = (current_row - row_position).abs
   col_diff = (current_col - col_position).abs
