@@ -39,5 +39,22 @@ class Piece < ActiveRecord::Base
       end
     end
 
+    return false
   end
+
+
+
+
+  def puts_piece
+    puts "I am a piece"
+  end
+
+  def occupied?(x, y)
+    game.pieces.where(row_position: x, col_position: y).present?
+  end
+
+  def in_boundaries?(row, col)
+    return col >= 0 && col <=7 && row >= 0 && row <= 7
+  end
+
 end

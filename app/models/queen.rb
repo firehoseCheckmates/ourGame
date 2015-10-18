@@ -8,6 +8,5 @@ class Queen < Piece
 
   def valid_move?
     # put code for how this piece should move here
-
   end
 end
