@@ -6,8 +6,8 @@ class Rook < Piece
     puts "This is a Rook"
   end
 
-  def valid_move?
-    # put code for how this piece should move here
-
+  def legal_move?
+    self.legal_horiz_move?(x, y) || self.legal_vert_move?(x, y)
   end
+
 end

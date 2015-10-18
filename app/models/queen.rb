@@ -6,8 +6,9 @@ class Queen < Piece
     puts "This is a Pawn"
   end
 
-  def valid_move?
-    # put code for how this piece should move here
+  def legal_move?(x, y)
+    self.legal_horiz_move?(x, y) || self.legal_vert_move?(x, y) || self.legal_diag_move?(x, y)
+  end
 
   end
 end

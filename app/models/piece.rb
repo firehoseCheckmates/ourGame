@@ -58,4 +58,21 @@ def in_boundaries?(row, col)
   return col >= 0 && col <=7 && row >= 0 && row <= 7
 end
 
+def piece_exists?(x, y)
+  Piece.where(game_id: self.id, row_position: x, col_position: y).exists?
+end
+
+def legal_horiz_move?(x, y)
+  :in_boundaries? && (self.col_position - col_position) == 0 #(how do we grab in_boundaries?)
+end
+
+def legal_vert_move?(x, y)
+  :in_boundaries? && (self.row_position - row_position) == 0 #(how do we grab in_boundaries?)
+end
+
+def legal_diag_move?(x, y)
+  (self.row_position - row_position).abs == (self.col_position - col_position).abs
+end
+
+
 end
