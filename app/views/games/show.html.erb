@@ -8,7 +8,9 @@
 					<td class="<%= color_block(row, col)%>">
 						<% @pieces.each do |piece| %>
 							<% if (piece.row_position == row) && (piece.col_position == col) %>
-								<%= link_to 'Piece.Show', piece_path, :class => "#{assign_piece(piece.type, piece.color)}" %>
+								<%= link_to piece_path, :method =>'EDIT' do %>
+									<%= image_tag 'image.jpg',  :class => "#{assign_piece(piece.type, piece.color)}" %>
+								<% end %>
 							<% end%>
 						<% end %>
 					</td>

@@ -16,14 +16,11 @@ class PiecesController < ApplicationController
   end
 
   def show
-    @game = Game.all
-
   end
 
   def update
     #put code that will move a piece to a new block
-    @game = Game.find(params[:id])
-    @game.update_attributes(black_player_id: current_user.id)
+    @piece.update_attributes
     redirect_to game_path(@game)
   end
 
