@@ -41,17 +41,17 @@
       </nav>
     <!-- This ends Nav Bar HTML-->
 
-
-      <%= yield %>
-
+      <div id="wrap"
+        <%= yield %>
+        <div id ="push"></div>
+      </div>
 
 
     <!-- This is the Footer HTML -->
-    <footer>
+    <div id="footer">
        <div class="row">
         <div class="small-1 large-1 columns"><img class="logo" src= "assets/firehoselogo.png" alt="theFireHoseProject"><p class="logo">FireHose</p></div>
         <div class="small-1 large-9 columns"></div>
-        <div class="small-9 large-1 columns"></div>
         <div class="small-1 large-1 columns">ABOUT</div>
       </div>
     </footer>
