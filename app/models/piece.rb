@@ -58,6 +58,9 @@ def occupied?(x, y)
   game.pieces.where(row_position: x, col_position: y).present?
 end
 
+def in_boundaries?(row, col)
+  return col >= 0 && col <=7 && row >= 0 && row <= 7
+end
 
 def legal_horiz_move?(x, y)
   x >= 0 and x <= 7 and y >= 0 and y <= 7 and (self.col_position - col_position) == 0

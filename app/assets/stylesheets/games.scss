@@ -14,17 +14,70 @@ table {
 }
 
 .wht {
-	background-image: url("white.png");
 	background-color: #D0E8FF;
 }
 
 .blk {
-	background-image: url("black.png");
 	background-color: #35629C;
-	a{
-		color: #fff
-	}
 }
 
-.custom-button-class {
+td {
+  	width: 100px;
+ 	height: 100px;
+ 	a{
+		width: 75px;
+		height: 100px;
+		display: block;
+ 	}
+}
+
+.white-rook {
+ 	background-image: url("white rook.png");
  }
+
+.white-bishop {
+	background-image: url("white bishop.png");
+ }
+
+.white-pawn {
+ 	background-image: url("white pawn.png");
+}
+
+.white-knight {
+ 	background-image: url("white knight.png");
+ }
+
+.white-queen {
+	background-image: url("white queen.png");
+}
+
+.white-king {
+	background-image: url("white king.png");
+}
+
+.black-rook {
+	background-image: url("Black Rook.png");
+}
+
+.black-bishop {
+ 	background-image: url("Black Bishop.png");
+}
+
+.black-pawn {
+ 	background-image: url("Black Pawn.png");
+}
+
+.black-knight {
+ 	background-image: url("Black Knight.png");
+}
+
+.black-queen {
+	background-image: url("Black Queen.png");
+}
+
+.black-king {
+	background-image: url("Black King.png");
+}
+
+
+
