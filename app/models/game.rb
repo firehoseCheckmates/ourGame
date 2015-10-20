@@ -41,4 +41,10 @@ class Game < ActiveRecord::Base
     King.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 4)
     King.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 4)
   end
+
+  def occupied?(row, col)
+    pieces.where(row_position: row, col_position: col).present?
+  end
+
+
 end
