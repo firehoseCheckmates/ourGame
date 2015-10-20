@@ -3,7 +3,7 @@ class Bishop < Piece
 
   def puts_piece_type
     puts "This is a Bishop"
-  endb
+  end
 
 
   def legal_move?(row, col)
