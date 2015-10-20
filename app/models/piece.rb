@@ -50,27 +50,27 @@ def puts_piece
   puts "I am a piece"
 end
 
-def occupied?(x, y)
-  game.pieces.where(row_position: x, col_position: y).present?
+def occupied?(row, col)
+  game.pieces.where(row_position: row, col_position: col).present?
 end
 
 def in_boundaries?(row, col)
   return col >= 0 && col <=7 && row >= 0 && row <= 7
 end
 
-def piece_exists?(x, y)
-  Piece.where(game_id: self.id, row_position: x, col_position: y).exists?
+def piece_erowists?(row, col)
+  Piece.where(game_id: self.id, row_position: row, col_position: col).erowists?
 end
 
-def legal_horiz_move?(x, y)
+def legal_horiz_move?(row, col)
   :in_boundaries? && (self.col_position - col_position) == 0 #(how do we grab in_boundaries?)
 end
 
-def legal_vert_move?(x, y)
+def legal_vert_move?(row, col)
   :in_boundaries? && (self.row_position - row_position) == 0 #(how do we grab in_boundaries?)
 end
 
-def legal_diag_move?(x, y)
+def legal_diag_move?(row, col)
   (self.row_position - row_position).abs == (self.col_position - col_position).abs
 end
 
