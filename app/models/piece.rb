@@ -4,8 +4,9 @@ class Piece < ActiveRecord::Base
   belongs_to :game
   attr_accessor :row_diff, :col_diff, :current_row, :current_col
 
-  row_diff = (current_row - row_position).abs
-  col_diff = (current_col - col_position).abs
+  # commented out these two lines to prevent rake test errors, but we need these somewhere
+  # row_diff = (current_row - row_position).abs
+  # col_diff = (current_col - col_position).abs
 
 def obstructed_move?(x, y)
   current_row = self.row_position
