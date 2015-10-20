@@ -43,7 +43,7 @@ class Game < ActiveRecord::Base
   end
 
   def occupied?(row, col)
-    pieces.where(row_position: row, col_position: col).present?
+    piece.where(row_position: row, col_position: col).present?
   end
 
 
