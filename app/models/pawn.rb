@@ -10,12 +10,18 @@ class Pawn < Piece
     current_row = self.row_position
     current_col = self.col_position
 
-    row_dif = (row - current_row).abs
-    col_dif = (col - current_col).abs
+    row_dif = (row - current_row)
+    col_dif = (col - current_col)
 
     #check to see if pawn has moved one square forward and backward, and nothing else
     #TODO how do we only allow white pawn to move down the board and black pawn to move up the board?
-    return  row_dif == 0 &&  col_dif == 1
 
+    # if pawn is white && row_dif == 0 &&  col_dif == 1
+    return true
+    #elsif pawn is black $$ row_dif == 0 && col_dif == -1
+    return true
+    else
+    return false
+    end
   end
 end
