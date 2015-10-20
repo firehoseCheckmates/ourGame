@@ -47,37 +47,24 @@ class Piece < ActiveRecord::Base
     return false
   end
 
-
-
-
-  def puts_piece
-    puts "I am a piece"
-  end
-
-  def occupied?(x, y)
-    game.pieces.where(row_position: x, col_position: y).present?
-  end
-
   def in_boundaries?(row, col)
     return col >= 0 && col <=7 && row >= 0 && row <= 7
   end
 
-def legal_horiz_move?(row, col)
-  return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.col_position - col_position) == 0
-end
+  def legal_horiz_move?(row, col)
+    return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.col_position - col_position) == 0
+  end
 
-def legal_vert_move?(row, col)
-  return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.row_position - row_position) == 0
-end
+  def legal_vert_move?(row, col)
+    return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.row_position - row_position) == 0
+  end
 
-def legal_diag_move?(row, col)
-  #row >= 0 && row <= 7 && col >= 0 && col <= 7
-  (self.row_position - row_position).abs == (self.col_position - col_position).abs
-end
+  def legal_diag_move?(row, col)
+    #row >= 0 && row <= 7 && col >= 0 && col <= 7
+    (self.row_position - row_position).abs == (self.col_position - col_position).abs
+  end
 
-def piece_erowists?(row, col)
-  Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
-end
-
-
+  def piece_erowists?(row, col)
+    Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
+  end
 end
