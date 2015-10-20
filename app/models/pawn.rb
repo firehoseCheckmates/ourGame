@@ -13,15 +13,14 @@ class Pawn < Piece
     row_dif = (row - current_row)
     col_dif = (col - current_col)
 
-    #check to see if pawn has moved one square forward and backward, and nothing else
-    #TODO how do we only allow white pawn to move down the board and black pawn to move up the board?
 
-    # if pawn is white && row_dif == 0 &&  col_dif == 1
-    return true
-    #elsif pawn is black $$ row_dif == 0 && col_dif == -1
-    return true
-    else
-    return false
+    #this checks to see if white pawn is moving forward on the board's column
+    if pawn.select(:piece_id => self.id, :color => "White") && row_dif == 0 &&  col_dif == 1
+      return true
+    end
+    # this checks to see if the black pawn is moving backward on the board's column
+    if  pawn.select(:piece_id => self.id, :color => "Black") && row_dif == 0 && col_dif == -1
+     return true
     end
   end
 end
