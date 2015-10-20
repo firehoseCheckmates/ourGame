@@ -2,6 +2,11 @@
 class Piece < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
+  attr_accessor :row_diff, :col_diff, :current_row, :current_col
+
+  # commented out these two lines to prevent rake test errors, but we need these somewhere
+  # row_diff = (current_row - row_position).abs
+  # col_diff = (current_col - col_position).abs
 
 def obstructed_move?(x, y)
   current_row = self.row_position
@@ -57,5 +62,23 @@ end
 def in_boundaries?(row, col)
   return col >= 0 && col <=7 && row >= 0 && row <= 7
 end
+
+def legal_horiz_move?(row, col)
+  return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.col_position - col_position) == 0
+end
+
+def legal_vert_move?(row, col)
+  return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.row_position - row_position) == 0
+end
+
+def legal_diag_move?(row, col)
+  #row >= 0 && row <= 7 && col >= 0 && col <= 7
+  (self.row_position - row_position).abs == (self.col_position - col_position).abs
+end
+
+def piece_erowists?(row, col)
+  Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
+end
+
 
 end
