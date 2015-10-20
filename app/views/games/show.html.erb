@@ -9,9 +9,8 @@
 						<% @pieces.each do |piece| %>
 							<% if (piece.row_position == row) && (piece.col_position == col) %>
 
-								<%= link_to piece_path, :method =>  do %>
-									<%= image_tag 'image.jpg',  :class => "#{assign_piece(piece.type, piece.color)}" %>
-								<% end %>
+								<%= link_to 'move piece', piece_path, :class => "#{assign_piece(piece.type, piece.color)}" %>
+
 
 
 
