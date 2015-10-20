@@ -3,7 +3,7 @@ Chessgame::Application.routes.draw do
   root 'landing_pages#index'
 
   resources :games, :only => [:new, :create, :show, :index, :update]
-  resources :pieces
+  resources :pieces, :only => [:index, :show, :update]
 
 
 
