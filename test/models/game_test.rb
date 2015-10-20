@@ -9,6 +9,7 @@ class GameTest < ActiveSupport::TestCase
 
      g = Game.create(white_player_id: 1, black_player_id: 2)
 
+
      assert_equal 32, g.pieces.count
      assert_equal "King", g.pieces.last.type
      assert_equal 0, g.pieces.last.row_position
