@@ -1,7 +1,12 @@
 class Queen < Piece
- 
+
   def puts_piece_type
     puts "This is a Queen"
+  end
+
+
+  def valid_move?
+    # put code for how this piece should move here
   end
 
   def legal_move?(x, y)
@@ -12,5 +17,6 @@ class Queen < Piece
 	def piece_exists?(x, y)
 	  Piece.where(row_position: x, col_position: y).exists?
 	end
+
 
 end
