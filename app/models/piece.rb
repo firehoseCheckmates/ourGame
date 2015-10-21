@@ -59,12 +59,16 @@ class Piece < ActiveRecord::Base
     return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.row_position - row_position) == 0
   end
 
+
   def legal_diag_move?(row, col)
     #row >= 0 && row <= 7 && col >= 0 && col <= 7
     (self.row_position - row_position).abs == (self.col_position - col_position).abs
   end
-  #Don't need since it's in the game.rb model
-  # def piece_erowists?(row, col)
-  #   Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
-  # end
+
+  def piece_exists?(row, col)
+    Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
+  end
+
+
+
 end
