@@ -13,6 +13,7 @@ class Pawn < Piece
 
 
     #this checks to see if white pawn is moving forward on the board's column
+   if row >= 0 and row <= 7 and col >= 0 and col <= 7
     if color == "White"
       return row_dif == -1 && col_dif == 0
     end
@@ -20,6 +21,7 @@ class Pawn < Piece
     if color == "Black"
      return row_dif == 1 && col_dif == 0
     end
+   end
   end
 
 end
