@@ -76,7 +76,7 @@ def legal_diag_move?(row, col)
   (self.row_position - row_position).abs == (self.col_position - col_position).abs
 end
 
-def piece_erowists?(row, col)
+def piece_exists?(row, col)
   Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
 end
 

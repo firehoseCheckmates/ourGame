@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class PawnTest < ActiveSupport::TestCase
-  test " white_pawn_legal_move" do
-    pawn = FactoryGirl.create(:pawn, :color => "White", :row_position => 1, :col_position => 0)
+  test " black_pawn_legal_move" do
+    pawn = FactoryGirl.create(:pawn, :color => "Black", :row_position => 1, :col_position => 0)
     assert pawn.legal_move?(2, 0)
     # test backward movement
     refute pawn.legal_move?(0, 0)
@@ -16,8 +16,8 @@ class PawnTest < ActiveSupport::TestCase
     refute pawn.legal_move?(1, -1)
    end
 
-  test "black_pawn_legal_move" do
-    pawn = FactoryGirl.create(:pawn, :color => "Black", :row_position => 6, :col_position => 0)
+  test "white_pawn_legal_move" do
+    pawn = FactoryGirl.create(:pawn, :color => "White", :row_position => 6, :col_position => 0)
     assert pawn.legal_move?(5, 0)
     # test backward movement
     refute pawn.legal_move?(7, 0)
@@ -27,8 +27,8 @@ class PawnTest < ActiveSupport::TestCase
     refute pawn.legal_move?(5, 1)
    end
 
-  test " end_white_pawn_legal_move" do
-    pawn = FactoryGirl.create(:pawn, :color => "White", :row_position => 1, :col_position => 7)
+  test " end_black_pawn_legal_move" do
+    pawn = FactoryGirl.create(:pawn, :color => "Black", :row_position => 1, :col_position => 7)
     assert pawn.legal_move?(2, 7)
     # test off board horizontal movement
     refute pawn.legal_move?(1, 8)
