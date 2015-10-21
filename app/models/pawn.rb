@@ -8,17 +8,17 @@ class Pawn < Piece
     current_row = self.row_position
     current_col = self.col_position
 
-    row_dif = (row - current_row)
-    col_dif = (col - current_col)
+    row_dif = (current_row - row)
+    col_dif = (current_col - col)
 
 
     #this checks to see if white pawn is moving forward on the board's column
-    if pawn.select(:piece_id => self.id, :color => "White") && row_dif == 0 &&  col_dif == 1
-      return true
+    if color == "White"
+      return row_dif == -1 && col_dif == 0
     end
     # this checks to see if the black pawn is moving backward on the board's column
-    if  pawn.select(:piece_id => self.id, :color => "Black") && row_dif == 0 && col_dif == -1
-     return true
+    if color == "Black"
+     return row_dif == 1 && col_dif == 0
     end
   end
 
