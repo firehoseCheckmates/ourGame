@@ -52,13 +52,15 @@ class Piece < ActiveRecord::Base
   end
 
   def legal_horiz_move?(row, col)
-    return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.col_position - col_position) == 0
+    row_diff = (self.row_position - row_position)
+    return in_boundaries and row_diff == 0
+    #TODO add one more and statement to check col position chage is greater than 0
   end
 
   def legal_vert_move?(row, col)
-    return row >= 0 && row <= 7 && col >= 0 && col <= 7 && (self.row_position - row_position) == 0
+    col_diff = (self.col_position - col_position)
+    return in_boundaries and col_diff == 0
   end
-
 
   def legal_diag_move?(row, col)
     #row >= 0 && row <= 7 && col >= 0 && col <= 7
