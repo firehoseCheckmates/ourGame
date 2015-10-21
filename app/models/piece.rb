@@ -65,9 +65,10 @@ class Piece < ActiveRecord::Base
     (self.row_position - row_position).abs == (self.col_position - col_position).abs
   end
 
-  def piece_exists?(row, col)
-    Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
-  end
+  # We'll use def occupied instead of def piece_exits
+  # def piece_exists?(row, col)
+  #   Piece.where(game_id: self.id, row_position: row, col_position: col).exists?
+  # end
 
 
 
