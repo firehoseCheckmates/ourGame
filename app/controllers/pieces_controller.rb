@@ -1,10 +1,4 @@
 class PiecesController < ApplicationController
-
-  def index
-  end
-
-
-
   def edit
     #put code that will change a piece position
   end
