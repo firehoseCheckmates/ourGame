@@ -72,7 +72,7 @@ def legal_vert_move?(row, col)
 end
 
 def legal_diag_move?(row, col)
-  #row >= 0 && row <= 7 && col >= 0 && col <= 7
+  row >= 0 && row <= 7 && col >= 0 && col <= 7
   (self.row_position - row_position).abs == (self.col_position - col_position).abs
 end
 

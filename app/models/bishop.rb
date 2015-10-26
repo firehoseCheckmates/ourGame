@@ -6,9 +6,9 @@ class Bishop < Piece
   end
 
 
-  def legal_move?(x, y)
+  def legal_move?(row, col)
   # bishop can only move diagonally
-    self.legal_diag_move?(x, y)
+    self.legal_diag_move?(row, col)
   end
 
 
