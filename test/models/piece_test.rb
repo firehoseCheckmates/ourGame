@@ -1,15 +1,18 @@
-require 'test_helper'
+# require 'test_helper'
 
-class PieceTest < ActiveSupport::TestCase
+# class PieceTest < ActiveSupport::TestCase
 
-test 'block is occupied with a piece' do
-	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 7, :col_position => 4)
-	assert_equal blk_king.occupied(0,0)
-end
+# test 'in_boundaries' do
 
-test 'block is not occupied with a piece' do
-	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 7, :col_position => 4)
-	assert_equal false, blk_king.occupied?(3,3)
-end
+# end
+# # test 'block is occupied with a piece' do
+# # 	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 7, :col_position => 4)
+# # 	assert_equal blk_king.occupied(0,0)
+# # end
 
-end
+# # test 'block is not occupied with a piece' do
+# # 	blk_king = FactoryGirl.create(:king, :color => 'Black', :row_position => 7, :col_position => 4)
+# # 	assert_equal false, blk_king.occupied?(3,3)
+# # end
+
+# end
