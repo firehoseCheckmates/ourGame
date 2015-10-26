@@ -1,18 +1,35 @@
 class PiecesController < ApplicationController
-  def edit
-    #put code that will change a piece position
-  end
+  before_action :authenticate_user!
 
   def show
 
   end
 
-  def update
-    #put code that will move a piece to a new block
-    @piece.update_attributes
-    redirect_to game_path(@game)
+  def edit
+    @piece = Piece.find(params[:id])
+    @pieces = @piece.game.pieces
   end
 
+  def update
+    #put code that will move a piece to a new block
+    @piece = Piece.find(params[:id])
+    #attributes need to be passes
+    @piece.update_attributes(move_parameters)
 
+    #@piece.move
+    #define game
+    redirect_to game_path(@game)
+  end
+Hi DAvid
+
+  private
+#piece_parameters = (row, col) of piece that is moved
+  # def move_params
+
+  #   params.require(:game).permit(
+  #     :row_position,
+  #     :col_position()
+  # end
 
 end
+

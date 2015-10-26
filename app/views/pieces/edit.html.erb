@@ -1,1 +1,30 @@
 <h1>this is the edit page</h1>
+
+
+
+<div class="row">
+  <div class="medium-10 medium-offset-1 columns">
+    <h1>Have Fun</h1>
+  <table class="chessboard" >
+    <% (0..7).each do |row| %>
+      <tr>
+      <% (0..7).each do |col|  %>
+          <td class="<%= color_block(row, col)%>">
+            <% @pieces.each do |piece| %>
+              <% if (piece.row_position == row) && (piece.col_position == col) %>
+
+                <%= link_to piece_path(), :method=> 'PUT'  do %>
+                  <%= image_tag :class => 'hightlited' '#{assign_piece}.png', :class => "#{assign_piece(piece.type, piece.color)}" %>
+                <% end %>
+
+
+
+              <% end%>
+            <% end %>
+          </td>
+      <% end %>
+      </tr>
+    <% end %>
+  </table>
+  </div>
+</div>
