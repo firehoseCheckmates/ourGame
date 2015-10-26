@@ -10,35 +10,35 @@ class Game < ActiveRecord::Base
 
     # populate white front row with Pawns
     (0..7).each do |n|
-      Pawn.create(:game_id => self.id, :color => "White", :row_position => 6, :col_position => n)
+      Pawn.create(:game_id => self.id, :color => "White", :row_position => 1, :col_position => n)
     end
 
     # populate black front row with Pawns
     (0..7).each do |n|
-      Pawn.create(:game_id => self.id, :color => "Black", :row_position => 1, :col_position => n)
+      Pawn.create(:game_id => self.id, :color => "Black", :row_position => 6, :col_position => n)
     end
 
     # populate back rows
     # rook, knight, bishop, queen, king, bishop, knight, rook
-    Rook.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 0)
-    Rook.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 7)
-    Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 0)
-    Rook.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 7)
+    Rook.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 0)
+    Rook.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 7)
+    Rook.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 0)
+    Rook.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 7)
 
-    Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 1)
-    Knight.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 6)
-    Knight.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 1)
-    Knight.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 6)
+    Knight.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 1)
+    Knight.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 6)
+    Knight.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 1)
+    Knight.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 6)
 
-    Bishop.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 2)
-    Bishop.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 5)
-    Bishop.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 2)
-    Bishop.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 5)
+    Bishop.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 2)
+    Bishop.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 5)
+    Bishop.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 2)
+    Bishop.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 5)
 
-    Queen.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 3)
-    Queen.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 3)
+    Queen.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 3)
+    Queen.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 3)
 
-    King.create(:game_id => self.id, :color => "White", :row_position => 7, :col_position => 4)
-    King.create(:game_id => self.id, :color => "Black", :row_position => 0, :col_position => 4)
+    King.create(:game_id => self.id, :color => "White", :row_position => 0, :col_position => 4)
+    King.create(:game_id => self.id, :color => "Black", :row_position => 7, :col_position => 4)
   end
 end
