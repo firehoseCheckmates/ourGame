@@ -12,7 +12,7 @@ class GameTest < ActiveSupport::TestCase
 
      assert_equal 32, g.pieces.count
      assert_equal "King", g.pieces.last.type
-     assert_equal 0, g.pieces.last.row_position
+     assert_equal 7, g.pieces.last.row_position
      assert_equal 4, g.pieces.last.col_position
 
    end
