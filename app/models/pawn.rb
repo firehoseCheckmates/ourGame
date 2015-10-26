@@ -4,9 +4,24 @@ class Pawn < Piece
     puts "This is a Pawn"
   end
 
-  def valid_move?
-    # put code for how this piece should move here
+  def legal_move?(row,col)
+    current_row = self.row_position
+    current_col = self.col_position
 
+    row_dif = (current_row - row)
+    col_dif = (current_col - col)
+
+
+    #this checks to see if white pawn is moving forward on the board's column
+   if row >= 0 and row <= 7 and col >= 0 and col <= 7
+    if color == "White"
+      return row_dif == -1 && col_dif == 0
+    end
+    # this checks to see if the black pawn is moving backward on the board's column
+    if color == "Black"
+     return row_dif == 1 && col_dif == 0
+    end
+   end
   end
 
 end

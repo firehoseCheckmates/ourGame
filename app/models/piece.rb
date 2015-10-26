@@ -89,6 +89,4 @@ class Piece < ActiveRecord::Base
     row_position == row && col_position = col
   end
 
-  def piece_alive?
-  end
 end
