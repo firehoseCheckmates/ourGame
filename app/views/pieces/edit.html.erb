@@ -13,9 +13,8 @@
             <% @pieces.each do |piece| %>
               <% if (piece.row_position == row) && (piece.col_position == col) %>
 
-                <%= link_to piece_path(), :method=> 'PUT'  do %>
-                  <%= image_tag :class => 'hightlited' '#{assign_piece}.png', :class => "#{assign_piece(piece.type, piece.color)}" %>
-                <% end %>
+                <%= link_to piece_path(piece.id), :method=> :put, :class => "highlighted #{assign_piece(piece.type, piece.color)}" %>
+
 
 
 

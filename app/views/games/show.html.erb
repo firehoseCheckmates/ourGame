@@ -9,7 +9,8 @@
 						<% @pieces.each do |piece| %>
 							<% if (piece.row_position == row) && (piece.col_position == col) %>
 
-								<%= link_to edit_piece_path, :method => 'GET', :class => "#{assign_piece(piece.type, piece.color)}" %>
+
+								<%= link_to edit_piece_path(piece.id), :method => :get, :class => "#{assign_piece(piece.type, piece.color)}" %>
 
 
 							<% end %>
