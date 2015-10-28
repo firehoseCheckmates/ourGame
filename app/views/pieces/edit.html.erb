@@ -13,7 +13,7 @@
             <% @pieces.each do |piece| %>
               <% if (piece.row_position == row) && (piece.col_position == col) %>
 
-                <%= link_to piece_path(piece.id), :method=> :put, :class => "highlighted #{assign_piece(piece.type, piece.color)}" %>
+                <%= link_to "", piece_path(piece.id), method: :put, :class => "highlighted #{assign_piece(piece.type, piece.color)}" %>
 
 
 
