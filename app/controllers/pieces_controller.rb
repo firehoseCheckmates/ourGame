@@ -20,10 +20,10 @@ class PiecesController < ApplicationController
     #define game
     redirect_to game_path(@game)
   end
-Hi DAvid
+
 
   private
-#piece_parameters = (row, col) of piece that is moved
+  #piece_parameters = (row, col) of piece that is moved
   # def move_params
 
   #   params.require(:game).permit(
