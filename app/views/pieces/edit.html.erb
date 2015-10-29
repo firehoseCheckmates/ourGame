@@ -13,12 +13,16 @@
             <% @pieces.each do |piece| %>
               <% if (piece.row_position == row) && (piece.col_position == col) %>
 
-                <%= link_to "", piece_path(piece.id), method: :put, :class => "highlighted #{assign_piece(piece.type, piece.color)}" %>
+                <% if piece == @piece %>
+                  <%= link_to "", "", method: :put, :class => "highlight #{assign_piece(piece.type, piece.color)}" %>
+                  <% else %>
+                  <%= link_to "", piece_path(piece.id), method: :put, :class => "#{assign_piece(piece.type, piece.color)}" %>
+                <% end %>
 
+                <%#pass an object piece object @piece.id
 
-
-
-              <% end%>
+piece: [ method: :put piece[]]
+              <% end %>
             <% end %>
           </td>
       <% end %>

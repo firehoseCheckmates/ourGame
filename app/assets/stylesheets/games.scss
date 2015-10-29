@@ -21,6 +21,14 @@ table {
 	background-color: #35629C;
 }
 
+.inactive{
+	display:hidden;
+}
+
+.highlight{
+	background-color: yellow;
+}
+
 td {
   	width: 100px;
  	height: 100px;
