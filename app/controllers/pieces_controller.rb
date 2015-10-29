@@ -14,22 +14,23 @@ class PiecesController < ApplicationController
     #put code that will move a piece to a new block
     @piece = Piece.find(params[:id])
     #attributes need to be passes
-    @piece.update_attributes(move_parameters)
+
+    # if move is valid
+    @piece.update_attributes(move_params)
 
     #@piece.move
     #define game
-    redirect_to game_path(@game)
+    redirect_to game_path(@piece.game)
+
+    # else rditre to edit
   end
 
 
   private
   #piece_parameters = (row, col) of piece that is moved
-  # def move_params
-
-  #   params.require(:game).permit(
-  #     :row_position,
-  #     :col_position()
-  # end
+  def move_params
+    params.require(:piece).permit(:row_position,:col_position)
+  end
 
 end
 
