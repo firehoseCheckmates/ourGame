@@ -46,5 +46,4 @@ class Game < ActiveRecord::Base
     Piece.where(row_position: row, col_position: col).present?
   end
 
-
 end

@@ -63,10 +63,13 @@ class Piece < ActiveRecord::Base
   def own_piece?
     #(I am totally not sure on this, but I know it needs to be your own piece)
     player_id == player.turn or game.turn #(or player_turn or something like this)
+    piece.color != @current_player.color
   end
 
   def nil_move?
     row_position == row && col_position = col
   end
+
+
 
 end
