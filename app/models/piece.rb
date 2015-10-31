@@ -40,6 +40,36 @@ class Piece < ActiveRecord::Base
       end
     end
 
+    # check if piece is blocking the path in the diagonal direction going to bottom right of board
+    if current_row < row && current_col < col
+      for i in ((row+1...current_row)&&(col+1...current_col))
+        self.game.occupied?(row, col)
+      end
+    end
+
+    # check if piece is blocking the path in the diagonal direction going to bottom left of board
+    if current_row < row && current_col > col
+      for i in ((row+1...current_row)&&(col-1...current_col))
+        self.game.occupied?(row, col)
+      end
+    else
+      puts "diagonal error bottom left"
+    end
+
+    # check if piece is blocking the path in the diagonal direction going to top right of board
+    if current_row > row && current_col < col
+      for i in ((row-1...current_row)&&(col+1...current_col))
+        self.game.occupied?(row, col)
+      end
+    end
+
+    # check if piece is blocking the path in the diagonal direction going to top left of board
+    if current_row > row && current_col > col
+      for i in ((row-1...current_row)&&(col-1...current_col))
+        self.game.occupied?(row, col)
+      end
+    end
+
     return false
   end
 
