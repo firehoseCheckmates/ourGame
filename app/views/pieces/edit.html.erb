@@ -19,7 +19,7 @@
                   <%= link_to "", piece_path(@piece.id,:piece => { id: @piece.id, row_position: row, col_position: col }), method: :put, :class => "#{assign_piece(piece.type, piece.color)}" %>
                 <% end %>
 
-               <!--  if empty square
+                <!--  if empty square
                 <%#= link_to "", piece_path(@piece.id),:piece => { id: @piece.id }, method: :put, :class => "#{assign_piece(piece.type, piece.color)}" %>
 
                 make every square a link regardless of what piece is there
