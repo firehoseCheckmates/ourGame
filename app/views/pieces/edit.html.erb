@@ -1,0 +1,39 @@
+<h1>this is the edit page</h1>
+
+
+
+<div class="row">
+  <div class="medium-10 medium-offset-1 columns">
+    <h1>Have Fun</h1>
+  <table class="chessboard" >
+    <% (0..7).each do |row| %>
+      <tr>
+      <% (0..7).each do |col|  %>
+          <td class="<%= color_block(row, col)%>">
+            <% @pieces.each do |piece| %>
+              <% if (piece.row_position == row) && (piece.col_position == col) %>
+
+                <% if piece == @piece %>
+                  <%= link_to "", "", method: :put, :class => "highlight #{assign_piece(piece.type, piece.color)}" %>
+                <% else %>
+                  <%= link_to "", piece_path(@piece.id,:piece => { id: @piece.id, row_position: row, col_position: col }), method: :put, :class => "#{assign_piece(piece.type, piece.color)}" %>
+                <% end %>
+
+                <!--  if empty square
+                <%#= link_to "", piece_path(@piece.id),:piece => { id: @piece.id }, method: :put, :class => "#{assign_piece(piece.type, piece.color)}" %>
+
+                make every square a link regardless of what piece is there
+ -->
+                <%#pass an object piece object @piece.id
+
+piece: [ method: :put piece[]]
+              <% end %>
+              <% end %>
+            <% end %>
+          </td>
+      <% end %>
+      </tr>
+    <% end %>
+  </table>
+  </div>
+</div>
