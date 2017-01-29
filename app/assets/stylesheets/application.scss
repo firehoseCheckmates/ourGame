@@ -16,3 +16,13 @@
 
 @import "foundation_and_overrides";
 /* Add imports of custom sass/scss files here */
+
+body {
+  background: url('/assets/home_page.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 95%;
+  background-position: 0% -15%;
+
+}

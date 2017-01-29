@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: url('/assets/home_page.jpg');
-  background-position: center;
-  background-image: cover
+  background: url('/assets/home_page.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 95%;
+  background-position: 0% -15%;
+
 }
 
 .centered{
@@ -13,6 +17,17 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-
     margin: auto;
+}
+
+
+
+img.logo{
+  position:relative;
+  right: 200px;
+}
+p.logo{
+    position: relative;
+    top: -35px;
+    left: -133px;
 }
